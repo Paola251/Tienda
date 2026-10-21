@@ -67,7 +67,7 @@ Para clonar y ejecutar esta aplicación localmente, necesita tener instalado
 .NET** y el componente **LocalDB de SQL Server Express**.
 
 1. **Clone el repositorio:**
- git clone https://github.com[Paola251]/[Tienda].git
+ git clone https://github.comPaola251/Tienda.git
 2. Abra el archivo de solución `.sln` en Visual Studio 2022.
 3. Asegúrese de restaurar los paquetes NuGet si el IDE no lo hace
 automáticamente.
