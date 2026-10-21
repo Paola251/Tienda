@@ -125,5 +125,33 @@ namespace EvaluadoT
             }
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (_productoIdSeleccionado == 0)
+            {
+                MessageBox.Show("Seleccione un producto de la lista para eliminar.");
+                return;
+            }
+            var confirm = MessageBox.Show("¿Está seguro de eliminar este producto ? ", "Confirmar", MessageBoxButtons.YesNo);
+ 
+            if (confirm == DialogResult.Yes)
+            {
+                var producto = _context.Productos.Find(_productoIdSeleccionado);
+
+                if (producto != null)
+                {
+                    _context.Productos.Remove(producto);
+                    _context.SaveChanges();
+                    CargarProductos();
+                    LimpiarFormulario();
+                    MessageBox.Show("Producto eliminado.");
+                }
+            }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+        }
     }
+
 }
