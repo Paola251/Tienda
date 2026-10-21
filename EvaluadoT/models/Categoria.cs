@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvaluadoT.models
+namespace EvaluadoT.Models
 {
     public class Categoria
     {
@@ -13,6 +13,6 @@ namespace EvaluadoT.models
         public string Nombre { get; set; } = null!;
 
         // Relación: Una categoría tiene muchos productos
-        public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
+        public virtual ICollection <Producto> Productos { get; set; } = new List<Producto> ();
     }
 }

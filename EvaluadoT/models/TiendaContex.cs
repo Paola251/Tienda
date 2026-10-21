@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
-namespace EvaluadoT.models
+namespace EvaluadoT.Models
 {
     public class TiendaContex:DbContext
     {
@@ -14,13 +15,15 @@ namespace EvaluadoT.models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Ruta automatizada hacia tu archivo MDF local
+            if (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime)
+            {
+                return;
+            }
+
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             string dbPath = Path.Combine(baseDir, "TiendaDB.mdf");
 
-            optionsBuilder.UseSqlServer($@"Data
-            Source=(Loca1DB)\MSSQLLoca1DB;AttachDbFilename={dbPath} ; Integrated
-            Security-True; TrustServerCertiticate-True");
+            optionsBuilder.UseSqlServer($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbPath};Database=TiendaDB;Integrated Security=True;TrustServerCertificate=True");
         }
     }
 }

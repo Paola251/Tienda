@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using EvaluadoT.models;
+using EvaluadoT.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EvaluadoT
@@ -133,7 +133,7 @@ namespace EvaluadoT
                 return;
             }
             var confirm = MessageBox.Show("¿Está seguro de eliminar este producto ? ", "Confirmar", MessageBoxButtons.YesNo);
- 
+
             if (confirm == DialogResult.Yes)
             {
                 var producto = _context.Productos.Find(_productoIdSeleccionado);
@@ -148,7 +148,7 @@ namespace EvaluadoT
                 }
             }
         }
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             LimpiarFormulario();
         }
