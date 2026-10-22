@@ -76,6 +76,9 @@ automáticamente.
 archivo `TiendaDB.mdf` automáticamente en el directorio de salida. Asegúrese de
 que el archivo `.mdf` tenga la propiedad *Copiar en el directorio de salida*
 configurada como *Copiar si es posterior*.
+>
+> Elaborado por: Daniel Armando Batres Perez 260703
+> Paola Esmeralda Cruz Vasquez 261105
 
 
 
